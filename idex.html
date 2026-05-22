@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elite International School</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:'Poppins', sans-serif;
+            background:#f4f8ff;
+            color:#333;
+        }
+
+        /* HEADER */
+
+        header{
+            background:linear-gradient(to right,#002244,#003366);
+            color:white;
+            padding:15px 40px;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        /* LOGO */
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .logo img{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            border:3px solid white;
+            object-fit:cover;
+        }
+
+        .logo-text h1{
+            font-size:28px;
+        }
+
+        .logo-text p{
+            font-size:13px;
+            color:#dcdcdc;
+        }
+
+        /* MENU */
+
+        .menu{
+            list-style:none;
+            display:flex;
+            flex-wrap:wrap;
+        }
+
+        .menu li{
+            margin:10px;
+        }
+
+        .menu a{
+            text-decoration:none;
+            color:white;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        .menu a:hover{
+            color:#00ccff;
+        }
+
+        /* HERO */
+
+        .hero{
+            height:92vh;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)),
+            url('school.jpg');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
+
+        .hero-content{
+            max-width:900px;
+            animation:fadeIn 2s ease;
+        }
+
+        .hero-content h2{
+            font-size:60px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:35px;
+            line-height:1.8;
+        }
+
+        .hero-buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .hero-buttons button{
+            padding:15px 35px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.3s;
+            font-weight:600;
+        }
+
+        .btn-primary{
+            background:#00aaff;
+            color:white;
+        }
+
+        .btn-primary:hover{
+            background:#0077cc;
+        }
+
+        .btn-secondary{
+            background:white;
+            color:#003366;
+        }
+
+        .btn-secondary:hover{
+            background:#ddd;
+        }
+
+        /* SECTIONS */
+
+        section{
+            padding:80px 20px;
+            text-align:center;
+        }
+
+        section h2{
+            font-size:42px;
+            color:#003366;
+            margin-bottom:20px;
+        }
+
+        section p{
+            max-width:900px;
+            margin:auto;
+            line-height:1.9;
+        }
+
+        /* CARDS */
+
+        .cards{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:30px;
+            margin-top:50px;
+        }
+
+        .card{
+            background:white;
+            width:320px;
+            padding:35px;
+            border-radius:18px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.08);
+            transition:0.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-12px);
+        }
+
+        .card i{
+            font-size:45px;
+            color:#00aaff;
+            margin-bottom:20px;
+        }
+
+        .card h3{
+            color:#003366;
+            margin-bottom:15px;
+        }
+
+        /* AI SECTION */
+
+        .ai-box{
+            max-width:700px;
+            margin:auto;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .ai-box input{
+            width:100%;
+            padding:15px;
+            border-radius:10px;
+            border:1px solid #ccc;
+            margin-top:20px;
+            font-size:16px;
+        }
+
+        .ai-box button{
+            margin-top:20px;
+            padding:15px 30px;
+            border:none;
+            background:#003366;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .ai-box button:hover{
+            background:#0055aa;
+        }
+
+        #ai-response{
+            margin-top:25px;
+            background:#f4f8ff;
+            padding:20px;
+            border-radius:10px;
+            font-weight:500;
+        }
+
+        /* CONTACT */
+
+        .contact-box{
+            line-height:2.2;
+            margin-top:20px;
+        }
+
+        .whatsapp-btn{
+            display:inline-block;
+            margin-top:25px;
+            background:#25D366;
+            color:white;
+            padding:15px 30px;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .whatsapp-btn:hover{
+            background:#1ebd5a;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#002244;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:40px;
+        }
+
+        /* ANIMATION */
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .navbar{
+                flex-direction:column;
+            }
+
+            .menu{
+                justify-content:center;
+                margin-top:15px;
+            }
+
+            .hero-content h2{
+                font-size:40px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+
+            .logo{
+                justify-content:center;
+                text-align:center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="navbar">
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <!-- ADD YOUR SCHOOL LOGO HERE -->
+                <img src="Elite Logo.jpg" alt="School Logo">
+
+                <div class="logo-text">
+                    <h1>Elite International School</h1>
+                    <h2>Knowlegde Is Power</h2>
+                    <p2>Knowledge • Discipline • Excellence</p2>
+                </div>
+
+            </div>
+
+            <!-- MENU -->
+
+            <ul class="menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#ai">AI Assistant</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Shaping Future Leaders</h2>
+
+            <p>
+                Elite International School provides quality education,
+                discipline, innovation and modern learning experiences
+                to help students achieve excellence.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="btn-primary"
+                onclick="alert('Admissions Open!')">
+
+                    Apply Now
+
+                </button>
+
+                <button class="btn-secondary"
+                onclick="document.getElementById('about').scrollIntoView()">
+
+                    Learn More
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2>About Our School</h2>
+
+        <p>
+            Elite International School is dedicated to providing high-quality
+            education in a safe, disciplined and technology-driven environment.
+            We focus on academic excellence, moral values, leadership and creativity.
+            Our experienced teachers guide students to become confident,
+            responsible and successful future leaders.
+        </p>
+        <img src="Elite Building.jpg" alt="School Building">
+
+
+    </section>
+
+    <!-- FACILITIES -->
+
+    <section id="facilities">
+
+        <h2>World-Class Facilities</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <i class="fas fa-computer"></i>
+                <h3>Modern ICT Lab</h3>
+                <p>
+                    Advanced computer laboratories with internet access
+                    and digital learning tools.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-book-open"></i>
+                <h3>Digital Library</h3>
+                <p>
+                    A rich collection of books and educational materials
+                    for research and learning.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-futbol"></i>
+                <h3>Sports Complex</h3>
+                <p>
+                    Excellent sporting facilities that support
+                    physical fitness and teamwork.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROGRAMS -->
+
+    <section id="programs">
+
+        <h2>Academic Programs</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <i class="fas fa-child"></i>
+                <h3>Nursery</h3>
+                <p>
+                    Early childhood education focused on creativity,
+                    social skills and confidence building.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-school"></i>
+                <h3>Primary School</h3>
+                <p>
+                    Strong academic foundation in literacy,
+                    numeracy and critical thinking.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Junior High School</h3>
+                <p>
+                    Preparation for higher education and future
+                    career success through quality teaching.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- AI ASSISTANT -->
+
+    <section id="ai">
+
+        <h2>School AI Assistant</h2>
+
+        <div class="ai-box">
+
+            <p>
+                Ask questions about admissions, programs,
+                school fees, facilities and more.
+            </p>
+
+            <input type="text"
+            id="ai-input"
+            placeholder="Ask the AI Assistant...">
+
+            <button onclick="askAI()">
+
+                Ask AI
+
+            </button>
+
+            <div id="ai-response">
+
+                AI response will appear here...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <div class="contact-box">
+
+            <p>📍 Accra, Ghana</p>
+            <p>📞 +233 531 778 494</p>
+            <p>✉️ info@eliteinternationalschool.com</p>
+
+        </div>
+
+        <a class="whatsapp-btn"
+        href="https://wa.me/233531778494"
+        target="_blank">
+
+            Chat With Us on WhatsApp
+
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Elite International School |
+            All Rights Reserved
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function askAI(){
+
+            let question =
+            document.getElementById("ai-input")
+            .value.toLowerCase();
+
+            let response =
+            document.getElementById("ai-response");
+
+            if(question.includes("admission")){
+
+                response.innerHTML =
+                "Admissions are currently open for Nursery, Primary and JHS.";
+
+            }
+
+            else if(question.includes("fees")){
+
+                response.innerHTML =
+                "Please contact the school office for detailed school fees information.";
+
+            }
+
+            else if(question.includes("location")){
+
+                response.innerHTML =
+                "Elite International School is located in Accra, Ghana.";
+
+            }
+
+            else if(question.includes("program")){
+
+                response.innerHTML =
+                "We offer Nursery, Primary and Junior High School programs.";
+
+            }
+
+            else{
+
+                response.innerHTML =
+                "Thank you for your question. Please contact the school for more information.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
